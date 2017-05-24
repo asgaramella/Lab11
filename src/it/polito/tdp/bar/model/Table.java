@@ -6,6 +6,12 @@ public class Table {
 	
 	
 	
+	@Override
+	public String toString() {
+		return "Table [numPosti=" + numPosti + ", libero=" + libero + "]";
+	}
+
+
 	public Table(int numPosti) {
 		super();
 		this.numPosti = numPosti;

@@ -26,7 +26,12 @@ public class BarController {
 
     @FXML
     void doSimula(ActionEvent event) {
-
+    	model.generaArrivi();
+    	model.run();
+    	txtResult.appendText("Nr clienti tot del bar "+Integer.toString(model.getSt().getTotClienti())+"\n");
+    	
+    	txtResult.appendText("Nr clienti soddisfatti del bar "+Integer.toString(model.getSt().getClientiSoddisfatti())+"\n");
+    	txtResult.appendText("Nr clienti insoddisfatti del bar "+Integer.toString(model.getSt().getClientiInsoddisfatti())+"\n");
     }
 
     @FXML
