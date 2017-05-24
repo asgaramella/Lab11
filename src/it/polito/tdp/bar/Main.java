@@ -1,6 +1,7 @@
 package it.polito.tdp.bar;
 	
 import it.polito.tdp.bar.model.Model;
+import it.polito.tdp.bar.model.Simulator;
 import javafx.application.Application;
 import javafx.stage.Stage;
 import javafx.scene.Scene;

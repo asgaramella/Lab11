@@ -4,6 +4,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 
 import it.polito.tdp.bar.model.Model;
+import it.polito.tdp.bar.model.Simulator;
+import it.polito.tdp.bar.model.Statistiche;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -26,12 +28,11 @@ public class BarController {
 
     @FXML
     void doSimula(ActionEvent event) {
-    	model.generaArrivi();
-    	model.run();
-    	txtResult.appendText("Nr clienti tot del bar "+Integer.toString(model.getSt().getTotClienti())+"\n");
+    	Statistiche st=model.startSimulazione();
+    	txtResult.appendText("Nr clienti tot del bar "+Integer.toString(st.getTotClienti())+"\n");
     	
-    	txtResult.appendText("Nr clienti soddisfatti del bar "+Integer.toString(model.getSt().getClientiSoddisfatti())+"\n");
-    	txtResult.appendText("Nr clienti insoddisfatti del bar "+Integer.toString(model.getSt().getClientiInsoddisfatti())+"\n");
+    	txtResult.appendText("Nr clienti soddisfatti del bar "+Integer.toString(st.getClientiSoddisfatti())+"\n");
+    	txtResult.appendText("Nr clienti insoddisfatti del bar "+Integer.toString(st.getClientiInsoddisfatti())+"\n");
     }
 
     @FXML
